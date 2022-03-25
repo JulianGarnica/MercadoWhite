@@ -8,6 +8,7 @@ else:
     app.config.from_object("config.DevelopmentConfig")
 
 #print(f'ENV is set to: {app.config["ENV"]}')
+#Change Env: export FLASK_ENV=development
 
 if __name__ == "__main__":
   app.run(debug=app.config["DEBUG"])

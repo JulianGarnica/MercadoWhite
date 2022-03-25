@@ -8,7 +8,15 @@ from flask_cors import CORS
 from .apps import *
 
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_folder='./dist/static',
+            template_folder='./dist/',
+            )
+
+@app.route('/', defaults={'path': '/'})
+@app.route('/<path:path>')
+def render_vue(path):
+    return render_template('index.html')
 
 ###Apps###
 app_auth = Auth(app)
