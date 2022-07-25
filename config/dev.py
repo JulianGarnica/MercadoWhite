@@ -4,10 +4,12 @@ from .configs import Config
 class DevelopmentConfig(Config):
   DEBUG = True
 
-  DB_NAME = "development-db"
-  DB_USERNAME = "admin"
-  DB_PASSWORD = "example"
+  DB_HOST = "82.180.133.59"
+  DB_USERNAME = "junian"
+  DB_PASSWORD = "01,doctoraguja"
+  DB_PORT = 3306
 
-  IMAGE_UPLOADS = "/home/username/projects/my_app/app/static/images/uploads"
+  IMAGE_UPLOADS = "/uploads"
 
   SESSION_COOKIE_SECURE = False
+  
