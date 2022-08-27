@@ -74,7 +74,7 @@ class conn():
             f"CREATE DATABASE IF NOT EXISTS {local_bd} CHARACTER SET utf8 COLLATE utf8_general_ci")  # create db
         engine.execute(f"USE {local_bd} ")  # select new db
 
-        confirmar = ""
+        confirmar = False
         # Verificar si existen las mismas columnas
 
         for h in range(0, 2):
@@ -171,9 +171,9 @@ class conn():
 
                             local_cursor.execute(
                                 f"ALTER TABLE {nombre_i} ADD {add_query}")
-        confirmar = "Bases de datos actualizadas correctamente"
-
-        print(confirmar)
+        confirmar = True
+        self.closeConnection()
+        return confirmar
 
 __all__ = ['externo_host', 'externo_user',
            'externo_password', 'externo_bd', 'externo_port']

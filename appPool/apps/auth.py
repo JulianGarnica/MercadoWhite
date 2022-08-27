@@ -146,5 +146,15 @@ class Auth():
 
       except:
         return jsonify({'result': 'none', 'error': sys.exc_info()[0]}), 405
-
+      
+    @app.route('/auth/v0.1/updateUser/', methods=['POST'])
+    @require_appkey
+    def updateUser():
+      id_empresa = request.json['id_empresa']
+      basedir = str(app.config['UPLOAD_FOLDER'])+str('/clients/')+str(id_empresa)
+      if(os.path.isdir(basedir)):
+          pass
+      else: os.mkdir(basedir)
+      response = self.connectionDBgtPool.create_databases(basedir, id_empresa, "bd_gtpool")
+      return jsonify({'result': response})
       

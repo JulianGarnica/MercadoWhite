@@ -1,8 +1,6 @@
-from distutils.log import debug
-from appPool import app as appPool
+# from werkzeug.serving import run_simple # werkzeug development server
+from apps import socketio, app
 
-#print(f'ENV is set to: {app.config["ENV"]}')
-#Change Env: export FLASK_ENV=development
-
-if __name__ == "__main__":
-  appPool.run(debug=appPool.config["DEBUG"])
+#Env development: export FLASK_ENV=development
+if __name__ == '__main__':
+   socketio.run(app)
