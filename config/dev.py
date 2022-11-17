@@ -4,9 +4,9 @@ from .configs import Config
 class DevelopmentConfig(Config):
   DEBUG = True
 
-  DB_HOST = "82.180.133.59"
-  DB_USERNAME = "junian"
-  DB_PASSWORD = "01,doctoraguja"
+  DB_HOST = "127.0.0.1"
+  DB_USERNAME = "root"
+  DB_PASSWORD = ""
   DB_PORT = 3306
 
   IMAGE_UPLOADS = "/uploads"
